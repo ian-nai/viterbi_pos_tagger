@@ -1,10 +1,24 @@
 use std::fs;
+use std::{
+    fs::File,
+    io::{prelude::*, BufReader},
+    path::Path,
+};
 
 pub fn read_corpus(file_path: &str) -> String {
     let contents = fs::read_to_string(file_path)
         .expect("Should have been able to read the file");
     return contents;
 }
+
+pub fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
+    let file = File::open(filename).expect("no such file");
+    let buf = BufReader::new(file);
+    buf.lines()
+        .map(|l| l.expect("Could not parse line"))
+        .collect()
+}
+
 
 pub fn get_words(string_to_analyze: &str) -> Vec<String> {
     let mut word_list: Vec<String> = Vec::new();
@@ -30,7 +44,6 @@ pub fn training_and_validation_data_split(word_list_2: Vec<String>) ->  (Vec<(St
      }
     
     let training_data_num = ((tagged_words_map.len() as f64) * 0.8) as i64;
-    let practice_data_num = ((tagged_words_map.len() as i64) - training_data_num) as i64;
     let mut chunk_array: Vec<&[(String, String)]> = Vec::new();
 
     let v_slices: Vec<&[(String, String)]> = tagged_words_map.chunks(training_data_num as usize).collect();
@@ -162,6 +175,6 @@ pub fn tagger(input: Vec<&str>, training_data: Vec<(String, String)>) -> Vec<(St
         };
     };
     
-    println!("{:?}", tagged_vec);
+    //println!("{:?}", tagged_vec);
     return tagged_vec;
 }
