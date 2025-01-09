@@ -1,0 +1,22 @@
+[package]
+name = "viterbi_pos_tagger"
+version = "0.1.0"
+edition = "2021"
+authors = ["Ian Goodale"]
+description = "A POS tagger using the Viterbi algorithm."
+readme = "README.md"
+repository = "https://github.com/ian-nai/viterbi_pos_tagger"
+license = "GPL-3.0-or-later"
+keywords = ["NLP", "pos", "part-of-speech tagger", "part-of-speech", "pos tagger", "tagger"]
+categories = ["text-processing"]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "viterbi_pos_tagger"
+path = "src/lib.rs"
+
+[dependencies]
+
+[[bin]]
+name = "tag"
+path = "src/bin/tag.rs"
