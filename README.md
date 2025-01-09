@@ -52,4 +52,8 @@ let remaining_data = all_data.1;
 ```
 
 ## Corpus Formatting
-Training corpora should be formatted similarly to the Brown Corpus: with each word separated from its tag by an underscore, like so: the_AT Fulton_NP County_NN Grand_JJ Jury_NN said_VBD Friday_NR an_AT investigation_NN of_IN Atlanta's_NP$ recent_JJ primary_NN election_NN produced_VBD no_AT evidence_NN that_CS any_DTI irregularities_NNS took_VBD place_NN ._.
+Training corpora should be formatted similarly to the Brown Corpus: with each word separated from its tag by an underscore, like so: "the_AT Fulton_NP County_NN Grand_JJ Jury_NN said_VBD Friday_NR an_AT investigation_NN of_IN Atlanta's_NP$ recent_JJ primary_NN election_NN produced_VBD no_AT evidence_NN that_CS any_DTI irregularities_NNS took_VBD place_NN ._."
+
+The complete Brown Corpus is included with the package.
+
+
