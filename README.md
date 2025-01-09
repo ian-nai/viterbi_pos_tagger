@@ -8,6 +8,13 @@ This package is straightforward to use:
 * Finally, pass a vector of your text to tag into the main tagging function
 
 ```rust
+use std::env;
+use viterbi_pos_tagger::read_corpus;
+use viterbi_pos_tagger::get_words;
+use viterbi_pos_tagger::all_data_vec;
+use viterbi_pos_tagger::tagger;
+use viterbi_pos_tagger::lines_from_file;
+
 pub fn main() {
     // set up argument parsing and assign our training data and input text to first and second args
     let args: Vec<String> = env::args().collect();
