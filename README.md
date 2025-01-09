@@ -30,7 +30,7 @@ pub fn main() {
     let test_sentences_input = vec!["lamb at test"];
     
     // tagging our input
-    tagger(test_sentences_input, all_data_2);
+    tagger(test_sentences_input, all_data);
 }
 ```
 Then, simply run your file containing the function above with the filename as an argument. The tagged text will be returned as a vector of tuples:
