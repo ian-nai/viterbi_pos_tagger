@@ -9,11 +9,7 @@ This package is straightforward to use:
 
 ```rust
 use std::env;
-use viterbi_pos_tagger::read_corpus;
-use viterbi_pos_tagger::get_words;
-use viterbi_pos_tagger::all_data_vec;
-use viterbi_pos_tagger::tagger;
-use viterbi_pos_tagger::lines_from_file;
+use viterbi_pos_tagger::*;
 
 pub fn main() {
     // set up argument parsing and assign our training data and input text to first and second args
@@ -50,7 +46,7 @@ There is also a helper function to split your tagged corpus into a smaller train
 
 ```rust
 
-use pos_tagger::training_and_validation_data_split
+use pos_tagger::training_and_validation_data_split;
 
 let all_data = training_and_validation_data_split(word_list);
 let training_data = all_data.0;
